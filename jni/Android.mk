@@ -184,11 +184,9 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := geos
 LOCAL_C_INCLUDES := \
-	$(LOCAL_PATH)/geos-3.2.2/include \
 	$(LOCAL_PATH)/geos-3.2.2/source/headers
 LOCAL_CFLAGS   := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS   := -L$(SYSROOT)/usr/lib -ldl
-LOCAL_CPPFLAGS := -fexceptions -frtti -ansi
+LOCAL_CXX      := g++
 
 LOCAL_SRC_FILES := \
 	geos-3.2.2/capi/geos_ts_c.cpp \
@@ -487,6 +485,6 @@ LOCAL_C_INCLUDES := \
 LOCAL_SRC_FILES := \
 	javasqlite-20110106/native/sqlite_jni.c \
 	libspatialite-amalgamation-2.3.1/sqlite3.c
-LOCAL_STATIC_LIBRARIES := spatialite iconv proj
+LOCAL_STATIC_LIBRARIES := spatialite iconv proj geos stdc++
 include $(BUILD_SHARED_LIBRARY)
 

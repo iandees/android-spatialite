@@ -74,6 +74,7 @@ isFinite(double d)
 }
 #define FINITE(x) ( isFinite(x) ) 
 
+/*
 #ifdef HAVE_ISNAN
 #define ISNAN(x) ( isnan(x) )
 #else
@@ -81,10 +82,12 @@ isFinite(double d)
 // oblivion. It does leave a version in std.
 #define ISNAN(x) ( std::isnan(x) )
 #endif
+*/
+#define ISNAN(x) ( isnan(x) )
 
 #ifdef HAVE_INT64_T_64
   typedef int64_t int64;
-#else
+#else 
 # ifdef HAVE_LONG_LONG_INT_64
    typedef long long int int64;
 # else
